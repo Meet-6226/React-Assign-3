@@ -1,17 +1,19 @@
 import React from 'react';
-import StudentInput from './studentInput.jsx';
-import StudentList from './studentList.jsx';
+import BookInput from './booksInfo.jsx';
+import BookList from './bookList.jsx';
 
 function App() {
-    const [students, setStudents] = React.useState([]);
-    const handleAddStudent = (student) => {
-        setStudents((prevStudents) => [...prevStudents, student]);
+    const [books, setBooks] = React.useState([]);
+    const handleAddBook = (book) => {
+        setBooks((prevBooks) => [...prevBooks, book]);
     };
 
     return (
         <>
-            <StudentInput onAddStudent={handleAddStudent} />
-            <StudentList students={students} />
+            <div style={{ textAlign: 'center', marginTop: '20px' }}></div>
+                <h1>Book Management System</h1>
+                <BookInput onAddBook={handleAddBook} />
+                <BookList books={books} />
         </>
     );
 }
